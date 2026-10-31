@@ -1,0 +1,34 @@
+[
+  {
+    "id": "SUB-MVWS2F1X-533",
+    "userEmail": "libinvincent89@gmail.com",
+    "userName": "Libin Vincent",
+    "amount": 10,
+    "utrNumber": "430981726354",
+    "screenshotFileName": "receipt.jpg",
+    "status": "approved",
+    "submittedAt": "2026-10-31T19:12:02.229Z",
+    "reviewedAt": "2026-10-31T19:12:09.598Z",
+    "reviewedBy": "libinvincent89@gmail.com"
+  },
+  {
+    "id": "SUB-DEMO-001",
+    "userEmail": "kiran.dev@gmail.com",
+    "userName": "Kiran Kumar",
+    "amount": 10,
+    "utrNumber": "430819284910",
+    "status": "pending",
+    "submittedAt": "2026-10-31T18:56:49.868Z",
+    "aiScan": {
+      "isPaymentScreenshot": true,
+      "amount": 10,
+      "amountMatches10": true,
+      "utrNumber": "430819284910",
+      "transactionDate": "Today, 2:40 PM",
+      "isRecent": true,
+      "isSuccessfulStatus": true,
+      "appName": "Google Pay",
+      "reason": "Paid ₹10 to vincentlibin487-5@okicici. Valid UTR."
+    }
+  }
+]

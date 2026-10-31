@@ -1,0 +1,131 @@
+{
+  "entities": {
+    "AppSettings": {
+      "title": "App Settings",
+      "description": "Dynamic configuration for the application",
+      "type": "object",
+      "properties": {
+        "upiId": {
+          "type": "string",
+          "description": "The UPI ID for payments"
+        },
+        "payeeName": {
+          "type": "string",
+          "description": "The Merchant/Payee name"
+        },
+        "qrImageUrl": {
+          "type": "string",
+          "description": "URL of the UPI QR code image"
+        },
+        "whatsappGroupLink": {
+          "type": "string",
+          "description": "Primary WhatsApp support group link"
+        },
+        "emergencyContact": {
+          "type": "string",
+          "description": "Emergency WhatsApp contact number"
+        },
+        "coursePrice": {
+          "type": "number",
+          "description": "Course price in INR"
+        },
+        "supportTextMl": {
+          "type": "string",
+          "description": "Support instruction text in Malayalam"
+        },
+        "heroTitle": { "type": "string" },
+        "heroHighlight": { "type": "string" },
+        "courseDuration": { "type": "string" },
+        "courseDescription": { "type": "string" },
+        "communityLink": { "type": "string" },
+        "profilePlaceholder": { "type": "string" },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedBy": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "upiId",
+        "payeeName",
+        "whatsappGroupLink",
+        "emergencyContact",
+        "coursePrice"
+      ]
+    },
+    "Learner": {
+      "title": "Learner",
+      "description": "App users/students",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "isPaid": { "type": "boolean" },
+        "completedDays": {
+          "type": "array",
+          "items": { "type": "number" }
+        },
+        "userTokenNumber": { "type": "number", "description": "Sequential registration ID" },
+        "paymentDetails": {
+          "type": "object",
+          "properties": {
+            "transactionId": { "type": "string" },
+            "utrNumber": { "type": "string" },
+            "paidAt": { "type": "string" },
+            "amount": { "type": "number" }
+          }
+        }
+      },
+      "required": ["email", "isPaid"]
+    },
+    "PaymentSubmission": {
+      "title": "Payment Submission",
+      "description": "User submitted payment details for verification",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "tokenNumber": { "type": "number" },
+        "userEmail": { "type": "string" },
+        "userName": { "type": "string" },
+        "amount": { "type": "number" },
+        "utrNumber": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected"] },
+        "submittedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userEmail", "amount", "status", "submittedAt", "tokenNumber"]
+    },
+    "Counter": {
+      "title": "Counter",
+      "description": "Sequential number tracker",
+      "type": "object",
+      "properties": {
+        "currentValue": { "type": "number" }
+      },
+      "required": ["currentValue"]
+    }
+  },
+  "firestore": {
+    "settings/app-config": {
+      "schema": "AppSettings",
+      "description": "Single document for app-wide dynamic settings"
+    },
+    "admins/{userId}": {
+      "schema": "Admin",
+      "description": "Admin users collection"
+    },
+    "users/{userId}": {
+      "schema": "Learner",
+      "description": "User profiles and progress"
+    },
+    "payments/{paymentId}": {
+      "schema": "PaymentSubmission",
+      "description": "Collection of payment requests"
+    },
+    "counters/{counterId}": {
+      "schema": "Counter",
+      "description": "Counters for sequential IDs (e.g., token-counter)"
+    }
+  }
+}

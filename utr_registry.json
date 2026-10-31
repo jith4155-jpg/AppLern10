@@ -1,0 +1,25 @@
+{
+  "430129841234": {
+    "utrNumber": "430129841234",
+    "email": "demo.student@gmail.com",
+    "amount": 10,
+    "verifiedAt": "2026-10-30T18:45:53.007Z",
+    "source": "manual_utr",
+    "details": "Seeded prior transaction"
+  },
+  "439812739012": {
+    "utrNumber": "439812739012",
+    "email": "libinvincent89@gmail.com",
+    "amount": 10,
+    "verifiedAt": "2026-10-31T18:46:06.591Z",
+    "source": "manual_utr"
+  },
+  "430981726354": {
+    "utrNumber": "430981726354",
+    "email": "libinvincent89@gmail.com",
+    "amount": 10,
+    "verifiedAt": "2026-10-31T19:12:09.598Z",
+    "source": "manual_utr",
+    "details": "Approved by admin (libinvincent89@gmail.com)"
+  }
+}
